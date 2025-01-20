@@ -2,7 +2,8 @@
 // import './App.css'
 
 import HomePage from "./components/HomePage"
-import Layout from "./components/Layout/Layout"
+import ContactDetails from "./components/ContactDetails"
+import Layout from "./components/Layout"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
+          <Route path="/contact" element={<ContactDetails/>}/>
         </Routes>
       </Layout>
       </BrowserRouter>
