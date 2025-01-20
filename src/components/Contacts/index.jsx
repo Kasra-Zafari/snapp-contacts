@@ -8,7 +8,11 @@ const Contacts = () => {
 
 
     useEffect(() => {
-        fetch("https://randomuser.me/api/?results=50")
+            const controller = new AbortController();
+            const signal = controller.signal;
+
+
+        fetch("https://randomuser.me/api/?results=50", signal)
             .then(res => res.json())
             .then(data => {
                 setContacts(data.results)
@@ -18,6 +22,8 @@ const Contacts = () => {
                 setLoading(false);
             })
             .finally(() => { setLoading(false) })
+
+            return()=>{controller.abort()}
 
     }, [])
 
