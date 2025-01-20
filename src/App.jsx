@@ -2,17 +2,20 @@
 // import './App.css'
 
 import HomePage from "./components/HomePage"
-import Header from "./components/Header/Header"
-import Footer from "./components/Footer/Footer"
+import Layout from "./components/Layout/Layout"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function App() {
 
   return (
     <>
-      <h1>hello snapp</h1>
-      <Header/>
-      <HomePage/>
-      <Footer/>
+      <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage/>}/>
+        </Routes>
+      </Layout>
+      </BrowserRouter>
     </>
   )
 }
