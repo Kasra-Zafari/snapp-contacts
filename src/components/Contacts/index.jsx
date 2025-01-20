@@ -6,6 +6,7 @@ import { data } from "react-router-dom";
 const Contacts = () => {
 
     const [contacts, setContacts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
 
     useEffect(() => {
@@ -14,9 +15,14 @@ const Contacts = () => {
             .then(data => {
                 setContacts(data.results)
             })
-            .catch((error)=>{alert("an error has been occured")})
-            
+            .catch((error) => { alert("an error has been occured") })
+            .finally(()=>{setLoading(false)})
+
     }, [])
+
+    if (loading) {
+        return <h3>Loading...</h3>
+    }
 
     return (
         <>
