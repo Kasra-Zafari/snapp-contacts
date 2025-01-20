@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SearchBar from "../SearchBar";
 
 
 const Contacts = () => {
@@ -35,6 +36,7 @@ const Contacts = () => {
         <>
             <div>
                 <h1>Contacts</h1>
+                <SearchBar/>
                 <div>
                     <ul>
                         {contacts.map(contact => (
