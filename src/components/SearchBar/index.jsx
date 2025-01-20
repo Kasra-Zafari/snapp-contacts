@@ -1,6 +1,6 @@
 
 
-const SearchBar=()=>{
+const SearchBar=({search , setsearch})=>{
 
 
     return(

@@ -6,11 +6,12 @@ const Contacts = () => {
 
     const [contacts, setContacts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [search, setSearch] = useState("");
 
 
     useEffect(() => {
-            const controller = new AbortController();
-            const signal = controller.signal;
+        const controller = new AbortController();
+        const signal = controller.signal;
 
 
         fetch("https://randomuser.me/api/?results=50", signal)
@@ -24,7 +25,7 @@ const Contacts = () => {
             })
             .finally(() => { setLoading(false) })
 
-            return()=>{controller.abort()}
+        return () => { controller.abort() }
 
     }, [])
 
@@ -36,7 +37,7 @@ const Contacts = () => {
         <>
             <div>
                 <h1>Contacts</h1>
-                <SearchBar/>
+                <SearchBar />
                 <div>
                     <ul>
                         {contacts.map(contact => (
