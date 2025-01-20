@@ -3,7 +3,10 @@
 const HomePage = () => {
 
     return (
-        <h1>HomePage</h1>
+        <div>
+            <h1>Welcome to My Contacts App</h1>
+            <p>This is the homepage of the contacts application.</p>
+        </div>
     )
 }
 

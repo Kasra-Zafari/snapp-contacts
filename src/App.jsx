@@ -2,7 +2,7 @@
 // import './App.css'
 
 import HomePage from "./components/HomePage"
-import ContactDetails from "./components/ContactDetails"
+import Contacts from "./components/Contacts"
 import Layout from "./components/Layout"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
@@ -14,7 +14,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
-          <Route path="/contact" element={<ContactDetails/>}/>
+          <Route path="/contacts" element={<Contacts/>}/>
         </Routes>
       </Layout>
       </BrowserRouter>
