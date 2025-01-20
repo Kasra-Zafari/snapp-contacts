@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { data } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 
 const Contacts = () => {
@@ -33,6 +31,7 @@ const Contacts = () => {
                         {contacts.map(contact => (
                             <li key={contact.login.uuid}>
                                 <img src={contact.picture.thumbnail} alt="pic" />
+                                <p>{contact.name.title} {contact.name.first} {contact.name.last}</p>
                             </li>
                         ))}
                     </ul>
