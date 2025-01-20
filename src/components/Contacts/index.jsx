@@ -13,8 +13,11 @@ const Contacts = () => {
             .then(data => {
                 setContacts(data.results)
             })
-            .catch((error) => { alert("an error has been occured") })
-            .finally(()=>{setLoading(false)})
+            .catch((error) => {
+                alert("an error has been occured");
+                setLoading(false);
+            })
+            .finally(() => { setLoading(false) })
 
     }, [])
 
@@ -31,7 +34,8 @@ const Contacts = () => {
                         {contacts.map(contact => (
                             <li key={contact.login.uuid}>
                                 <img src={contact.picture.thumbnail} alt="pic" />
-                                <p>{contact.name.title} {contact.name.first} {contact.name.last}</p>
+                                <p>{contact.name.first} {contact.name.last}</p>
+                                <p>{contact.cell}</p>
                             </li>
                         ))}
                     </ul>
