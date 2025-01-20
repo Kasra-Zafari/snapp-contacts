@@ -1,6 +1,20 @@
+import { useState } from "react";
+import { useEffect } from "react";
 
 
 const Contacts = () => {
+
+    const[contacts, setContacts]=useState([]);
+    console.log(contacts);
+    
+
+useEffect(()=>{
+    fetch("https://randomuser.me/api/?results=50")
+    .then(res=>res.json())
+    .then(date=>{
+        setContacts(date)
+    })
+},[])
 
     return (
         <>
