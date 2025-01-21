@@ -40,8 +40,6 @@ const Contacts = () => {
         const searchType = search.toLowerCase();
         return fullName.includes(searchType) || phone.includes(searchType)
     });
-
-    console.log(filteredContacts);
     
 
     return (
@@ -51,7 +49,7 @@ const Contacts = () => {
                 <SearchBar search={search} setSearch={setSearch} />
                 <div>
                     <ul>
-                        {contacts.map(contact => (
+                        {filteredContacts.map(contact => (
                             <li key={contact.login.uuid}>
                                 <img src={contact.picture.thumbnail} alt="pic" />
                                 <p>{contact.name.first} {contact.name.last}</p>
