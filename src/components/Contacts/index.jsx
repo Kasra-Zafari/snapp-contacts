@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import SearchBar from "../SearchBar";
 import { Link, useNavigate } from "react-router-dom";
+import classes from "./index.module.css";
 
 
 const Contacts = () => {
@@ -50,10 +51,10 @@ const Contacts = () => {
 
     return (
         <>
-            <div>
-                <h1>Contacts</h1>
+            <div className={classes.contacts}>
+                <h1>Contact</h1>
                 <SearchBar search={search} setSearch={setSearch} />
-                <div>
+                <div className={classes.container}>
                     <ul>
                         {filteredContacts.length > 0 ? (
                             filteredContacts.map(contact => (
