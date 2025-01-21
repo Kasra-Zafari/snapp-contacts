@@ -8,6 +8,9 @@ const Contacts = () => {
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
 
+    console.log(search);
+    
+
 
     useEffect(() => {
         const controller = new AbortController();
@@ -37,7 +40,7 @@ const Contacts = () => {
         <>
             <div>
                 <h1>Contacts</h1>
-                <SearchBar />
+                <SearchBar search={search} setSearch={setSearch}/>
                 <div>
                     <ul>
                         {contacts.map(contact => (
