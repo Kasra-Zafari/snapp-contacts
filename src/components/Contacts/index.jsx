@@ -34,7 +34,12 @@ const Contacts = () => {
     }, [])
 
     if (loading) {
-        return <h3>Loading...</h3>
+        return (
+            <div className={classes.loading}>
+                <div className={classes['loading-spinner']}></div>
+                <p>Loading...</p>
+            </div>
+        );
     }
 
     const filteredContacts = contacts.filter(contact => {
