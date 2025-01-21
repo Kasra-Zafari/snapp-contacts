@@ -9,16 +9,20 @@ const ContactDetails = () => {
 
     useEffect(() => {
         if(params.id){
-            fetch(`https://randomuser.me/api/?results=1&seed=${params.id}`)
+            fetch(`https://dummyjson.com/users/${params.id}`)
             .then(res => res.json())
             .then(data => {
-                setContact(data.results[0])
+                setContact(data);
             })
         }
-    }, [params.id])
+    }, [params.id]);
+
+    if (!contact) {
+        return <h3>Loading...</h3>;
+    };
 
     return (
-        <p>{contact.name.first}</p>
+        <p>{contact.firstName}</p>
     )
 }
 
