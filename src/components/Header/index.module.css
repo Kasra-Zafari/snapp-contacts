@@ -1,21 +1,21 @@
-.header{
+.header {
     background-color: #A59D84;
     height: 10vh;
-display: flex;
-justify-content: center;
-align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.header button{
+.header button {
     border: none;
     background-color: inherit;
-    font-size: 1rem;
-    padding: 2rem;
-    margin: 2rem;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
     cursor: pointer;
+    color: #fff;
 }
 
-.header button:hover{
-    /* transform: scale(1.2); */
-    color: #ECEBDE;
+.header button:hover {
+    transform: scale(1.2);
 }
