@@ -42,7 +42,7 @@ const Contacts = () => {
         const searchType = search.toLowerCase();
         return fullName.includes(searchType) || phone.includes(searchType)
     });
-    
+
 
     const handleNavigate = (id) => {
         navigate(`/contacts/${id}`);
@@ -57,13 +57,15 @@ const Contacts = () => {
                     <ul>
                         {filteredContacts.length > 0 ? (
                             filteredContacts.map(contact => (
-                                <li key={contact.id}>
+                                <li
+                                    onClick={() => handleNavigate(contact.id)}
+                                    key={contact.id}>
                                     <img src={contact.image} alt="pic" />
                                     <p>{contact.firstName} {contact.lastName}</p>
                                     <p>{contact.phone}</p>
-                                    <button onClick={() => handleNavigate(contact.id)}>
+                                    {/* <button onClick={() => handleNavigate(contact.id)}>
                                         View Details
-                                    </button>
+                                    </button> */}
                                 </li>
                             ))
                         ) : (<p>No contacts found</p>)}
