@@ -7,7 +7,7 @@ const Contacts = () => {
     const [contacts, setContacts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
-    
+
 
 
     useEffect(() => {
@@ -34,13 +34,21 @@ const Contacts = () => {
         return <h3>Loading...</h3>
     }
 
-    const filteredContacts = contacts.filter();
+    const filteredContacts = contacts.filter(contact => {
+        const fullName = `${contact.name.first} ${contact.name.last}`.toLowerCase();
+        const phone = contact.cell.toLowerCase();
+        const searchType = search.toLowerCase();
+        return fullName.includes(searchType) || phone.includes(searchType)
+    });
+
+    console.log(filteredContacts);
+    
 
     return (
         <>
             <div>
                 <h1>Contacts</h1>
-                <SearchBar search={search} setSearch={setSearch}/>
+                <SearchBar search={search} setSearch={setSearch} />
                 <div>
                     <ul>
                         {contacts.map(contact => (
