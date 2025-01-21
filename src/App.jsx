@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/contacts" element={<Contacts/>}/>
-          <Route path="/contacts/:harchi" element={<ContactDetails/>}/>
+          <Route path="/contacts/:id" element={<ContactDetails/>}/>
         </Routes>
       </Layout>
       </BrowserRouter>
