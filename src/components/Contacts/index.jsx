@@ -7,8 +7,6 @@ const Contacts = () => {
     const [contacts, setContacts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
-
-    console.log(search);
     
 
 
@@ -35,6 +33,8 @@ const Contacts = () => {
     if (loading) {
         return <h3>Loading...</h3>
     }
+
+    const filteredContacts = contacts.filter();
 
     return (
         <>
