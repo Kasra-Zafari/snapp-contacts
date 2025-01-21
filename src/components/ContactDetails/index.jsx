@@ -1,9 +1,9 @@
 
 
-const ContactDetails = ()=>{
 
+const ContactDetails = () => {
 
-    return(
+    return (
         <h1>ContactDetails</h1>
     )
 }

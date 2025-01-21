@@ -40,7 +40,7 @@ const Contacts = () => {
         const searchType = search.toLowerCase();
         return fullName.includes(searchType) || phone.includes(searchType)
     });
-
+    
 
     return (
         <>

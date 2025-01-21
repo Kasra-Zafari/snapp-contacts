@@ -5,6 +5,7 @@ import HomePage from "./components/HomePage"
 import Contacts from "./components/Contacts"
 import Layout from "./components/Layout"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import ContactDetails from "./components/ContactDetails"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/contacts" element={<Contacts/>}/>
+          <Route path="/contacts/:harchi" element={<ContactDetails/>}/>
         </Routes>
       </Layout>
       </BrowserRouter>
