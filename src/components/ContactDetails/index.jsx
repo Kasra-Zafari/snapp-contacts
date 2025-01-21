@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import classes from "./index.module.css";
 
 const ContactDetails = () => {
     const params = useParams();
@@ -17,8 +18,13 @@ const ContactDetails = () => {
     }, [params.id]);
 
     if (!contact) {
-        return <h3>Loading...</h3>;
-    };
+        return (
+            <div className={classes.loading}>
+                <div className={classes['loading-spinner']}></div>
+                <p>Loading...</p>
+            </div>
+        );
+    }
 
 
     // const mapUrl = contact.address.coordinates.lat && contact.address.coordinates.lng 
@@ -26,11 +32,11 @@ const ContactDetails = () => {
     //     : null;
 
     // console.log(contact.address.coordinates.lng);
-    
+
 
     return (
-        <div>
-            <img src={contact.image} alt="" />
+        <div className={classes.contactDetails}>
+            <img src={contact.image} alt={`${contact.firstName} ${contact.lastName}`} />
             <h2>{contact.firstName} {contact.lastName}</h2>
             <p><strong>Phone:</strong> {contact.phone}</p>
             <p><strong>Email:</strong> {contact.email}</p>
