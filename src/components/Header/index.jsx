@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import classes from "./index.module.css";
 
 
 const Header = () => {
 
     return (
         <>
-            <header>
+            <header className={classes.header}>
                 <Link to="/">
                     <button>Home</button>
                 </Link>

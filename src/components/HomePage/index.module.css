@@ -1,0 +1,12 @@
+.home {
+    background-color: #ECEBDE;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home h1{
+    margin: 2rem;
+}
