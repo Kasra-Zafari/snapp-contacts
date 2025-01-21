@@ -40,7 +40,7 @@ const Contacts = () => {
         const searchType = search.toLowerCase();
         return fullName.includes(searchType) || phone.includes(searchType)
     });
-    
+
 
     return (
         <>
@@ -49,13 +49,15 @@ const Contacts = () => {
                 <SearchBar search={search} setSearch={setSearch} />
                 <div>
                     <ul>
-                        {filteredContacts.map(contact => (
-                            <li key={contact.login.uuid}>
-                                <img src={contact.picture.thumbnail} alt="pic" />
-                                <p>{contact.name.first} {contact.name.last}</p>
-                                <p>{contact.cell}</p>
-                            </li>
-                        ))}
+                        {filteredContacts.length > 0 ? (
+                            filteredContacts.map(contact => (
+                                <li key={contact.login.uuid}>
+                                    <img src={contact.picture.thumbnail} alt="pic" />
+                                    <p>{contact.name.first} {contact.name.last}</p>
+                                    <p>{contact.cell}</p>
+                                </li>
+                            ))
+                        ) : (<p>No contacts found</p>)}
                     </ul>
                 </div>
             </div>
