@@ -69,9 +69,6 @@ const Contacts = () => {
                                     <img src={contact.image} alt="pic" />
                                     <p>{contact.firstName} {contact.lastName}</p>
                                     <p>{contact.phone}</p>
-                                    {/* <button onClick={() => handleNavigate(contact.id)}>
-                                        View Details
-                                    </button> */}
                                 </li>
                             ))
                         ) : (<p>No contacts found</p>)}

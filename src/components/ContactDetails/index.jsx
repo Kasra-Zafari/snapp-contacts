@@ -8,12 +8,22 @@ const ContactDetails = () => {
 
 
     useEffect(() => {
+        const controller = new AbortController();
+        const signal = controller.signal;
+
         if (params.id) {
-            fetch(`https://dummyjson.com/users/${params.id}`)
+            fetch(`https://dummyjson.com/users/${params.id}`, { signal })
                 .then(res => res.json())
                 .then(data => {
                     setContact(data);
                 })
+                .catch((error) => {
+                    alert("an error has been occured");
+                })
+
+            return () => {
+                controller.abort();
+            };
         }
     }, [params.id]);
 
@@ -27,12 +37,7 @@ const ContactDetails = () => {
     }
 
 
-    // const mapUrl = contact.address.coordinates.lat && contact.address.coordinates.lng 
-    //     ? `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${contact.address.coordinates.lat},${contact.address.coordinates.lng}` 
-    //     : null;
-
-    // console.log(contact.address.coordinates.lng);
-
+   
 
     return (
         <div className={classes.contactDetails}>
