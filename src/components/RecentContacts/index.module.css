@@ -60,3 +60,31 @@
     color: #333;
     margin: 0;
 }
+
+.container p{
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.container button {
+    background-color: #A59D84;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 20px;
+}
+
+.container button:hover {
+    background-color: #8a7f5e; 
+    transform: scale(1.05);
+}
+
+

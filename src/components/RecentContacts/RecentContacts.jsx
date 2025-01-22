@@ -26,22 +26,27 @@ const RecentContacts = () => {
             <div className={classes.contacts}>
                 <h2>Recently Viewed Contacts</h2>
                 <div className={classes.container}>
-                    <ul>
-                        {recentContacts.map(contact => (
-                            <li
-                                onClick={() => handleNavigate(contact.id)}
-                                key={contact.id}>
-                                <img src={contact.image} alt="pic" />
-                                <p>{contact.firstName} {contact.lastName}</p>
-                                <p>{contact.phone}</p>
-                            </li>
-                        ))}
-                    </ul>
+                    {recentContacts.length > 0 ? (
+                        <ul>
+                            {recentContacts.map(contact => (
+                                <li
+                                    onClick={() => handleNavigate(contact.id)}
+                                    key={contact.id}>
+                                    <img src={contact.image} alt="pic" />
+                                    <p>{contact.firstName} {contact.lastName}</p>
+                                    <p>{contact.phone}</p>
+                                </li>
+                            ))}
+                        </ul>
+
+                    ) : (
+                        <p>The recently viewed contacts list is empty</p>
+                    )}
                     {recentContacts.length > 0 && <button onClick={handleClearRecentContacts}>Clear Recent Contacts</button>}
                 </div>
             </div>
         </>
-    )
+    );
 }
 
 export default RecentContacts;
