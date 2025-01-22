@@ -1,23 +1,34 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const RecentContacts = () => {
-    const [recentContacts, setRecentContacts] = useState([])
+    const [recentContacts, setRecentContacts] = useState([]);
+    const navigate = useNavigate()
 
     useEffect(() => {
         const storedContacts = JSON.parse(localStorage.getItem("recentContacts")) || [];
         setRecentContacts(storedContacts);
     }, [])
 
+    const handleNavigate = (id) => {
+        navigate(`/contacts/${id}`);
+    };
+
     return (
         <>
             <div>
                 <h2>Recently Viewed Contacts</h2>
                 <ul>
-                    <li>item1</li>
-                    <li>item2</li>
-                    <li>item3</li>
-                    <li>item4</li>
+                    {recentContacts.map(contact=>(
+                        <li
+                        onClick={() => handleNavigate(contact.id)}
+                        key={contact.id}>
+                        <img src={contact.image} alt="pic" />
+                        <p>{contact.firstName} {contact.lastName}</p>
+                        <p>{contact.phone}</p>
+                    </li>
+                    ))}
                 </ul>
             </div>
         </>
