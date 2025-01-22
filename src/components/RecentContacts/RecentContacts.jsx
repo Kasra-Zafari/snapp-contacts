@@ -16,6 +16,11 @@ const RecentContacts = () => {
         navigate(`/contacts/${id}`);
     };
 
+    const handleClearRecentContacts = () => {
+        localStorage.removeItem("recentContacts");
+        setRecentContacts([]);
+    };
+
     return (
         <>
             <div className={classes.contacts}>
@@ -32,6 +37,7 @@ const RecentContacts = () => {
                             </li>
                         ))}
                     </ul>
+                    {recentContacts.length > 0 && <button onClick={handleClearRecentContacts}>Clear Recent Contacts</button>}
                 </div>
             </div>
         </>
