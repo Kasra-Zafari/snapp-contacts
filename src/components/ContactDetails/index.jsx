@@ -15,9 +15,9 @@ const ContactDetails = () => {
             .then(data => {
                 setContact(data);
             })
-            .catch((error) => console.error("Error fetching contact:", error));
+            // .catch((error) => console.error("Error fetching contact:", error));
 
-        return () => controller.abort();
+        // return () => controller.abort();
     }, [params.id]);
 
     useEffect(() => {
