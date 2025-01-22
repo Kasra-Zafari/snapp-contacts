@@ -32,25 +32,24 @@ const ContactDetails = () => {
     }
 
 
-    useEffect(() => {
-        if (contact) {
-            const storedContacts = JSON.parse(localStorage.getItem("recentContacts")) || [];
-            const updatedContacts = storedContacts.filter(c => c.id !== contact.id);
-            updatedContacts.unshift({
-                id: contact.id,
-                firstName: contact.firstName,
-                lastName: contact.lastName,
-                phone: contact.phone,
-                city: contact.address.city,
-                image: contact.image
-            });
-            if (updatedContacts.length > 4) {
-                updatedContacts.pop();
-            }
-            localStorage.setItem("recentContacts", JSON.stringify(updatedContacts));
-        }
-    }, [contact]);
-
+    // useEffect(() => {
+    //     if (contact) {
+    //         const storedContacts = JSON.parse(localStorage.getItem("recentContacts")) || [];
+    //         const updatedContacts = storedContacts.filter(c => c.id !== contact.id);
+    //         updatedContacts.unshift({
+    //             id: contact.id,
+    //             firstName: contact.firstName,
+    //             lastName: contact.lastName,
+    //             phone: contact.phone,
+    //             city: contact.address.city,
+    //             image: contact.image
+    //         });
+    //         if (updatedContacts.length > 4) {
+    //             updatedContacts.pop();
+    //         }
+    //         localStorage.setItem("recentContacts", JSON.stringify(updatedContacts));
+    //     }
+    // }, [contact]);
 
     // const mapUrl = contact.address.coordinates.lat && contact.address.coordinates.lng 
     //     ? `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${contact.address.coordinates.lat},${contact.address.coordinates.lng}` 

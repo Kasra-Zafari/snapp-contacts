@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import SearchBar from "../SearchBar";
 import { Link, useNavigate } from "react-router-dom";
 import classes from "./index.module.css";
+import RecentContacts from "../RecentContacts/RecentContacts";
 
 
 const Contacts = () => {
@@ -59,6 +60,7 @@ const Contacts = () => {
             <div className={classes.contacts}>
                 <h1>Contact</h1>
                 <SearchBar search={search} setSearch={setSearch} />
+                <RecentContacts/>
                 <div className={classes.container}>
                     <ul>
                         {filteredContacts.length > 0 ? (
