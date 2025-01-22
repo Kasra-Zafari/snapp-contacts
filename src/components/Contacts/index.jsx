@@ -58,9 +58,9 @@ const Contacts = () => {
     return (
         <>
             <div className={classes.contacts}>
-                <h1>Contact</h1>
                 <SearchBar search={search} setSearch={setSearch} />
                 <RecentContacts/>
+                <h1>Contact</h1>
                 <div className={classes.container}>
                     <ul>
                         {filteredContacts.length > 0 ? (
