@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import classes from "./index.module.css";
 
 
 const RecentContacts = () => {
@@ -17,19 +18,21 @@ const RecentContacts = () => {
 
     return (
         <>
-            <div>
+            <div className={classes.contacts}>
                 <h2>Recently Viewed Contacts</h2>
-                <ul>
-                    {recentContacts.map(contact=>(
-                        <li
-                        onClick={() => handleNavigate(contact.id)}
-                        key={contact.id}>
-                        <img src={contact.image} alt="pic" />
-                        <p>{contact.firstName} {contact.lastName}</p>
-                        <p>{contact.phone}</p>
-                    </li>
-                    ))}
-                </ul>
+                <div className={classes.container}>
+                    <ul>
+                        {recentContacts.map(contact => (
+                            <li
+                                onClick={() => handleNavigate(contact.id)}
+                                key={contact.id}>
+                                <img src={contact.image} alt="pic" />
+                                <p>{contact.firstName} {contact.lastName}</p>
+                                <p>{contact.phone}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </>
     )

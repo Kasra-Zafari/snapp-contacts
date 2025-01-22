@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import SearchBar from "../SearchBar";
-import { Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import classes from "./index.module.css";
 import RecentContacts from "../RecentContacts/RecentContacts";
 
